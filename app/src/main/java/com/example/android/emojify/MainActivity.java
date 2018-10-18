@@ -174,19 +174,19 @@ public class MainActivity extends AppCompatActivity {
         // Toggle Visibility of the views
         mEmojifyButton.setVisibility(View.GONE);
         mTitleTextView.setVisibility(View.GONE);
-        mSaveFab.setVisibility(View.VISIBLE);
-        mShareFab.setVisibility(View.VISIBLE);
-        mClearFab.setVisibility(View.VISIBLE);
+        mSaveFab.show();
+        mShareFab.show();
+        mClearFab.show();
 
         // Resample the saved image to fit the ImageView
         mResultsBitmap = BitmapUtils.resamplePic(this, mTempPhotoPath);
         
         // Detect the faces
-        Emojifier.detectFaces(this, mResultsBitmap);
+        
         // TODO (10): Change the method call from detectFaces() to detectFacesAndOverlayEmoji() and assign the result to mResultsBitmap.
         
         // Set the new bitmap to the ImageView
-        mImageView.setImageBitmap(mResultsBitmap);
+        mImageView.setImageBitmap(Emojifier.detectFacesAndOverlayEmoji(this, mResultsBitmap));
     }
 
 
@@ -229,9 +229,9 @@ public class MainActivity extends AppCompatActivity {
         mImageView.setImageResource(0);
         mEmojifyButton.setVisibility(View.VISIBLE);
         mTitleTextView.setVisibility(View.VISIBLE);
-        mShareFab.setVisibility(View.GONE);
-        mSaveFab.setVisibility(View.GONE);
-        mClearFab.setVisibility(View.GONE);
+        mShareFab.hide();
+        mSaveFab.hide();
+        mClearFab.hide();
 
         // Delete the temporary image file
         BitmapUtils.deleteImageFile(this, mTempPhotoPath);
