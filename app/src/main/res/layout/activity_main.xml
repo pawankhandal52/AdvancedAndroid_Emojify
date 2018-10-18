@@ -52,7 +52,6 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:onClick="emojifyMe"
         android:text="@string/go"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"/>
 
@@ -79,7 +78,6 @@
         android:layout_marginBottom="@dimen/fab_margins"
         android:layout_marginEnd="@dimen/fab_margins"
         android:layout_marginRight="@dimen/fab_margins"
-        android:onClick="saveMe"
         android:src="@drawable/ic_save"
         android:visibility="gone"
         app:backgroundTint="@android:color/white" />
